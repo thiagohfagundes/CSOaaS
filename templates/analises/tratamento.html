@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Tratamento{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <a href="{% url 'segmentacao' %}">Retornar à página anterior</a>
+        <p>Colunas da sua planilha:</p>
+        <select class="form-select" multiple aria-label="Colunas da sua planilha">
+        {% for coluna in colunas %}
+            <option>{{ coluna }}</option>
+        {% endfor %}
+        </select>
+    </div>
+{% endblock %}

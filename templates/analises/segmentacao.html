@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Segmentação{% endblock %}
+
+{% block main %}
+    <h5 class="card-title">Segmentação de carteira</h5>
+    <p>Importe aqui sua planilha:</p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit">Importar CSV</button>
+    </form>
+
+{% endblock %}

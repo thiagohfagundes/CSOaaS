@@ -5,10 +5,15 @@
 
 {% block main %}
     <h5 class="card-title">Segmentação de carteira</h5>
-    <p>Importe aqui sua planilha:</p>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form|crispy }}
+        <p>Importe aqui sua planilha:</p>
+        {{ form.arquivo_csv }}
+        <p>Delimite sua planilha</p>
+        <p><label>Linha inicial</label> {{ form.linha_inicio }}</p>
+        <p><label>Linha final</label> {{ form.linha_final }}</p>
+        <p><label>Coluna inicial</label> {{ form.coluna_inicio }}</p>
+        <p><label>Coluna final</label> {{ form.coluna_final }}</p>
         <button type="submit">Importar CSV</button>
     </form>
 

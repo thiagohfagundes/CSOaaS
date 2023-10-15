@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Confirmar{% endblock %}
+
+{% block main %}
+<p>Você selecionou o pipeline {{ pipeline }} e as propriedades:</p>
+    {% for propriedade in propriedades %}
+        {{ propriedade }}
+    {% endfor %}
+{% endblock %}

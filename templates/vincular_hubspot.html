@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Início{% endblock %}
+
+{% block main %}
+<a href="{% url 'hubspot' %}">Conectar Hubspot</a>
+<a href="{% url 'configurar' %}">Configurar</a>
+{{ registro }}
+{% endblock %}

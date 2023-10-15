@@ -1,13 +1,22 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import *
-from django.views.generic import ListView
+from django.views.generic import CreateView, UpdateView, ListView
 from django.urls import reverse_lazy
 from django.views import generic
 
 # Create your views here.
 def usuarios(request):
-    return render(request, "usuarios.html")
+    return render(request, 'registration/usuarios.html')
+
+class MeuUsuario(CreateView):
+    model = Perfil
+    template_name = 'registration/criar_usuarios.html'
+    fields = '__all__'
+
+class EditarUsuario(UpdateView):
+    model = Perfil
+    template_name = 'registration/editar_usuarios.html'
 
 class SignUp(generic.CreateView):
     form_class = UserCreationForm

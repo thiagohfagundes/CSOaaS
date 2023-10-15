@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Tratamento{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Selecionar colunas</button>
+        </form>
+    </div>
+{% endblock %}

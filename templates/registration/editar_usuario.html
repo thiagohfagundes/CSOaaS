@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar usuário{% endblock %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar modificações</button>
+    <small>(<a href="#">Deletar</a>)</small>
+</form>
+
+{% endblock %}
